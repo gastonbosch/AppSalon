@@ -19,20 +19,7 @@ class Router
 
     public function comprobarRutas()
     {
-        
-        // Proteger Rutas...
-        session_start();
-
-        // Arreglo de rutas protegidas...
-        // $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar'];
-
-        // $auth = $_SESSION['login'] ?? null;
-
-        //DESARROLLO
         //$currentUrl = $_SERVER['PATH_INFO'] ?? '/';
-
-        //PRODUCCION
-        //$currentUrl = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
         $currentUrl = strtok($_SERVER['REQUEST_URI'],'?') ?? '/';
         $method = $_SERVER['REQUEST_METHOD'];
 
@@ -41,7 +28,6 @@ class Router
         } else {
             $fn = $this->postRoutes[$currentUrl] ?? null;
         }
-
 
         if ( $fn ) {
             // Call user fn va a llamar una función cuando no sabemos cual sera

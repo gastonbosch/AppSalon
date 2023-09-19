@@ -23,7 +23,7 @@
     
         }
 
-        public function enviarConfirmacion(){
+        public function sendConfirmation(){
             try {
                 $config = ClientConfiguration::getDefaultConfiguration()->setApiKey('api-key', $_ENV['API_KEY_BREVO']);
 
@@ -53,7 +53,7 @@
             }
         }
 
-        public function enviarInstrucciones(){
+        public function sendInstructions(){
 
             try {
                 $config = ClientConfiguration::getDefaultConfiguration()->setApiKey('api-key', $_ENV['API_KEY_BREVO']);
