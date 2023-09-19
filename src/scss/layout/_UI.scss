@@ -1,0 +1,70 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.container-app{
+    @include m.tablet{
+        @include m.grid(2,0rem);
+        /*VH significa viewport height (altura del dispositivo). También funciona como porcentaje, 
+          especificar 10vh es equivalente a ocupar 10% de la altura visible de la pantalla*/
+        min-height: 100vh;
+    }
+
+    .image{
+        height: 20rem;
+        background-image: url('../img/1.jpg');
+        background-size: cover;
+        background-position: center center;
+        @include m.tablet{
+            height: auto;
+        }
+    }
+
+    //Esta es la parte derecha del formulario, donde esta la pantalla
+    .app{
+        width: 100%;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+        /*Con esta sentencia si el contenido tiene mas del 100% del contenedor agrega un scroll,
+        asi, la imagen de la izquierza permanece fija, y el formualrio de la derecha con scroll*/
+        @include m.tablet{
+            overflow-y: scroll;
+        }
+    }
+
+    .name-page{
+        margin: 5rem 0;
+        font-weight: v.$bold;
+    }
+
+    .description-page{
+        text-align: center;
+    }
+}
+
+.bar{
+    margin: v.$separacion 0;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .button{
+        @include m.boton(v.$negro, v.$blanco);
+        margin: 0;
+    }
+}
+
+.bar-services{
+    margin-bottom: v.$separacion;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button{
+        margin: 0 0 1rem 0;
+    }
+}

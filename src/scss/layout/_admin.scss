@@ -1,0 +1,44 @@
+@use 'base/variables' as v;
+
+.appointment{
+    list-style: none;
+    padding: 0;
+    li{
+        padding: 1rem;
+        border-top: 1px solid v.$blanco;
+        p{
+            font-weight: v.$bold;
+            color: v.$azul;
+        }
+
+        span,
+        .service{
+            font-weight: v.$regular;
+            color: v.$blanco;
+        }
+    }
+}
+
+.total{
+    font-weight: v.$bold;
+    color: v.$azul;
+     span{
+        font-weight: v.$regular;
+        color: v.$blanco;
+     }
+}
+
+/*La sentencia @extend permite heredar estilos, en este caso la clase .service hereda los estilos 
+de la clase .appointment*/
+.service{
+    @extend .appointment;
+
+    .actions{
+        margin: 0;
+    }
+
+    .button,
+    .button-delete{
+        margin: 0;
+    }
+}

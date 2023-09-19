@@ -1,0 +1,24 @@
+{
+    "name": "gaston/app-salon",
+    "description": "Proyecto PHP 8 MVC",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controller\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\" : "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gaston Bosch",
+            "email": "gastonbosch@hotmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "vlucas/phpdotenv": "^5.5",
+        "getbrevo/brevo-php": "1.0.2"
+    }
+}
