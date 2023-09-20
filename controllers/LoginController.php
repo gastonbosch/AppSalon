@@ -38,11 +38,11 @@
                             }
                         }else{
                             //If the password is incorrect
-                            User::setAlerta('error','The password is incorrect or the user is not confirmed');                         
+                            User::setAlerta('error','La contraseña es incorrecta o el usuario no está confirmado');                         
                         }
                     }else{
                         //Is the user not exists
-                        User::setAlerta('error','User not found');
+                        User::setAlerta('error','Usuario no encontrado');
                     }
 
                 }
@@ -81,11 +81,11 @@
                         $email->sendInstructions();
 
                         //Message to succese
-                        User::setAlerta('succese','Check your email');
+                        User::setAlerta('succese','Consulte su correo electrónico');
 
                     }else{
                         //Usuario no existe o no esta confirmado
-                        User::setAlerta('error','The user does not exist or is not confirmed');
+                        User::setAlerta('error','El usuario no existe o no está confirmado');
                     }
                 }
             }
@@ -101,7 +101,7 @@
             $user = User::where('token',$_GET['token']);
 
             if(empty($user)){
-                User::setAlerta('error','Token no valid');
+                User::setAlerta('error','Token no valido');
                 $error = true;
             }else{
                 if($_SERVER['REQUEST_METHOD']==='POST'){
@@ -184,12 +184,12 @@
             $user = User::where('token',$token);
             
             if(empty($user)){
-                User::setAlerta('error','Invalid token');
+                User::setAlerta('error','Token no valido');
             }else{
                 $user->confirmed = '1';
                 $user->token = null;
                 $user->guardar();
-                User::setAlerta('succese','account verified successfully');
+                User::setAlerta('succese','Cuenta validada exitosamente');
             };
             $alerts = User::getAlertas();
             $router->render('auth/confirmAccount',[

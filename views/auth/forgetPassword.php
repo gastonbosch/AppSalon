@@ -1,16 +1,16 @@
-<h1 class="name-page">I forget my password</h1>
-<p class="description-page">Reset your password by typing your mail below</p>
+<h1 class="name-page">Olvide mi contraseña</h1>
+<p class="description-page">Restablece tu contraseña escribiendo tu correo a continuación</p>
 <?php include_once __DIR__.'/../templates/alerts.php'; ?>
 <form class="form" method="POST" action="/forgetPassword">
     <div class="field">
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Your e-mail" name="email">
+        <input type="email" id="email" placeholder="Tu e-mail" name="email">
     </div>
 
-    <input type="submit" class="button" value="Send">
+    <input type="submit" class="button" value="Enviar">
 </form>
 
 <div class="actions">
-    <a href="/">Have you already created an account? Login</a>
-    <a href="/createAccount">Do not you have an account yet? Create one</a>
+    <a href="/">¿Ya has creado una cuenta? Inicia sesion</a>
+    <a href="/createAccount">¿Aún no tienes una cuenta? Crea una</a>
 </div>

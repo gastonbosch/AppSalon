@@ -21,15 +21,15 @@
 
         public function validate(){
             if(!$this->name){
-                self::setAlerta('error','Name is required');
+                self::setAlerta('error','El nombre es obligatorio');
             }
 
             if(!$this->price){
-                self::setAlerta('error','Price is required');
+                self::setAlerta('error','El precio es obligatorio');
             }
 
             if(!is_numeric($this->price)){
-                self::setAlerta('error','Not valid format');
+                self::setAlerta('error','Formato no valido');
             }
         }
 

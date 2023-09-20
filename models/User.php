@@ -32,46 +32,46 @@
         
         public function validateLogin(){
             if(!$this->email){
-                $this->setAlerta('error','You must enter an email');
+                $this->setAlerta('error','Debe ingresar en email');
             }
             if(!$this->password){
-                $this->setAlerta('error','You must enter a password');
+                $this->setAlerta('error','Debe ingresar una contraseña');
             }
         }
 
         public function validateEmail(){
             if(!$this->email){
-                $this->setAlerta('error','You must enter an email');
+                $this->setAlerta('error','Debe ingresar en email');
             }
         }
 
         public function validatePassword(){
             if(!$this->password){
-                $this->setAlerta('error','You must enter an email');
+                $this->setAlerta('error','Debe ingresar en email');
             }
             if(strlen($this->password) < 6){
-                $this->setAlerta('error','Password must have at least 6 characters');
+                $this->setAlerta('error','La contraseña debe tener al menos 6 caracteres');
             }
         }
 
         public function validateNewUserAccount(){
             if(!$this->name){
-                $this->setAlerta('error','You must enter a user name');
+                $this->setAlerta('error','Debe ingresar un nombre');
             }
             if(!$this->surname){
-                $this->setAlerta('error','You must enter a user surname');
+                $this->setAlerta('error','Debe ingresar un apellido');
             }
             if(!$this->telephone){
-                $this->setAlerta('error','You must enter a telephone');
+                $this->setAlerta('error','Debe ingresar un telefono');
             }
             if(!$this->email){
-                $this->setAlerta('error','You must enter a email');
+                $this->setAlerta('error','Debe ingresar un email');
             }
             if(!$this->password){
-                $this->setAlerta('error','You must enter a password');
+                $this->setAlerta('error','Debe ingresar una contraseña');
             }else{
                 if(strlen($this->password) > 6){
-                    $this->setAlerta('error','Password must have at least 6 characters');
+                    $this->setAlerta('error','La contraseña debe tener al menos 6 caracteres');
                 }
             }
         }
@@ -82,7 +82,7 @@
             $result = self::$db->query($query);
 
             if($result->num_rows){
-                self::setAlerta('error','User already exists');
+                self::setAlerta('error','El usuario ya existe');
             }
         }    
         

@@ -1,6 +1,6 @@
-<h1 class="name-page">Confirm Account</h1>
+<h1 class="name-page">Confirmar cuenta</h1>
 <?php include_once __DIR__.'/../templates/alerts.php' ?>
 
 <div class="actions">
-    <a href="/">Login</a>
+    <a href="/">Iniciar Sesion</a>
 </div>

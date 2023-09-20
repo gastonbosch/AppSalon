@@ -1,5 +1,5 @@
-<h1 class="name-page">Create Service</h1>
-<p class="descripcion-page">Create a new service</p>
+<h1 class="name-page">Crear servisio</h1>
+<p class="descripcion-page">Crear un nuevo servicio</p>
 
 <?php 
     //include_once __DIR__.'/../templates/bar.php';
@@ -8,5 +8,5 @@
 
 <form action="/services/create" method="POST" class="form">
     <?php include __DIR__.'/form.php'; ?>
-    <input type="submit" class="button" value="Save">
+    <input type="submit" class="button" value="Guardar">
 </form>

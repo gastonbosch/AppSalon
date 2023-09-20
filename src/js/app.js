@@ -105,10 +105,10 @@ function nextPage(){
 async function queryAPI(){
 
     try{
-    const url = `${location.origin}/api/services`;
-    result = await fetch(url);
-    services = await result.json();
-    showServices(services);
+        const url = `${location.origin}/api/services`;
+        result = await fetch(url);
+        services = await result.json();
+        showServices(services);
 
     }catch(error){
         console.log(error);
