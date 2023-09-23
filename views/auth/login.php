@@ -8,8 +8,8 @@
     </div>
 
     <div class="field">
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" placeholder="Tu contraseña" name="password">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Tu password" name="password">
     </div>
 
     <input type="submit" class="button" value="Inicia sesion">
@@ -17,5 +17,5 @@
 
 <div class="actions">
     <a href="/createAccount">¿Aún no tienes una cuenta? Crea una</a>
-    <a href="/forgetPassword">¿Olvidaste tu contraseña?</a>
+    <a href="/forgetPassword">¿Olvidaste tu password?</a>
 </div>

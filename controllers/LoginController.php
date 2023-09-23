@@ -10,6 +10,8 @@
 
         public static function login(Router $router){
 
+            $alertas = [];
+
             if($_SERVER['REQUEST_METHOD']==='POST'){
                 $auth = new User($_POST);
 
@@ -47,9 +49,9 @@
 
                 }
             }
-
+            $alertas = User::getAlertas();
             $router->render('auth/login',[
-                'alerts' => User::getAlertas()
+                'alerts' => $alertas
             ]);
         }
 
