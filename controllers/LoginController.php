@@ -50,6 +50,7 @@
                 }
             }
             $alertas = User::getAlertas();
+            debuguear($alertas);
             $router->render('auth/login',[
                 'alerts' => $alertas
             ]);
