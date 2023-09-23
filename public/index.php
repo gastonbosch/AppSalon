@@ -13,6 +13,7 @@ $router = new Router();
 
 //PARTE PUBLICA
 //Start sesion
+debuguear($router);
 $router->get('/',[LoginController::class,'login']);
 $router->post('/',[LoginController::class,'login']);
 
