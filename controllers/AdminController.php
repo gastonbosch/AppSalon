@@ -8,12 +8,13 @@
     class AdminController{
 
         public static function index(Router $router){
-            if(!$_SESSION){
+            
+            if(!isset($_SESSION)){
                 session_start();
             }
 
             isAdmin();
-
+            
             $date = $_GET['date'] ?? date('Y-m-d');
             $dateArray = explode('-',$date);
             

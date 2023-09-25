@@ -34,6 +34,7 @@
                             //Redireccionamiento
                             if($user->admin==='1'){
                                 $_SESSION['admin'] = $user->admin ?? null;
+                                
                                 header('Location: /admin');
                             }else{
                                 header('Location: /appointment');

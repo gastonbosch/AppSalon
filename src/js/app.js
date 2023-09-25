@@ -177,7 +177,7 @@ function getDate(){
         //include valida ssi existe un valor en el array 
         if([6,0].includes(day)){
             appointment.day = '';
-            showAlert('we do not work on weekends', 'error','.form');
+            showAlert('No trabajamos los fines de semana', 'error','.form');
         }else{
             appointment.day = inputDay.value;
         }
@@ -192,7 +192,7 @@ function getHour(){
         const hour = hourAppointment.split(':')[0];
         if(hour < 9 || hour > 20){
             e.target.value = '';
-            showAlert('Not valid hour','error','.form');
+            showAlert('Hora no valida','error','.form');
         }else{
             appointment.hour = e.target.value;
         }
@@ -233,7 +233,7 @@ function showSummary(){
     /*Object.values() permite trata un objeto, en este caso el objeto appointment, como si fuera un array,
     y de esta manera acceder a sus propiedades como si fueran elementos de un array*/
     if(Object.values(appointment).includes("") || appointment.services.length===0){
-        showAlert('Incomplete data','error','.content-summary',false);
+        showAlert('Datos incompletos','error','.content-summary',false);
         return;
     }
 
@@ -241,7 +241,7 @@ function showSummary(){
 
     //Heading to services
     const headingService = document.createElement('H3');
-    headingService.textContent = 'Services is summary';
+    headingService.textContent = 'Servicios es resumen';
     summary.appendChild(headingService);
 
     services.forEach(service => {
@@ -254,7 +254,7 @@ function showSummary(){
         nameService.textContent = name;
 
         const priceService = document.createElement('P');
-        priceService.innerHTML = `<span>Price: </span>$${price}`;
+        priceService.innerHTML = `<span>Precio: </span>$${price}`;
 
         contentService.appendChild(nameService);
         contentService.appendChild(priceService);
@@ -264,11 +264,11 @@ function showSummary(){
 
     //Heading to appointment
     const headingAppointment = document.createElement('H3');
-    headingAppointment.textContent = 'Appointment is summary';
+    headingAppointment.textContent = 'Resumen de cita';
     summary.appendChild(headingAppointment);
 
     const nameClient = document.createElement('P');
-    nameClient.innerHTML = `<span>Name: </span>${name}`;
+    nameClient.innerHTML = `<span>Nombre: </span>${name}`;
 
     //Format date
     const dateObj = new Date(day);
@@ -282,15 +282,15 @@ function showSummary(){
     const dateFormat = dateUTC.toLocaleDateString('es-AR',options);
 
     const dateClient = document.createElement('P');
-    dateClient.innerHTML = `<span>Date: </span>${dateFormat}`;
+    dateClient.innerHTML = `<span>Fecha: </span>${dateFormat}`;
 
     const hourClient = document.createElement('P');
-    hourClient.innerHTML = `<span>Hour: </span>${hour} Hours`;
+    hourClient.innerHTML = `<span>Hora: </span>${hour} Hours`;
 
     //button book appointment
     const buttonReserve = document.createElement('BUTTON');
     buttonReserve.classList.add('button');
-    buttonReserve.textContent = 'Book Appointment';
+    buttonReserve.textContent = 'Reservar cita';
     buttonReserve.onclick = bookAppointment;
 
     summary.appendChild(nameClient);
@@ -327,8 +327,8 @@ async function bookAppointment(){
         if(result.resultado){
             Swal.fire({
                 icon: 'success',
-                title: 'Appointment created',
-                text: 'Your appointment was created successfully',
+                title: 'Cita creada',
+                text: 'Su cita fue creada exitosamente',
                 button: 'OK'
             }).then(()=>{
                 setTimeout(()=>{
@@ -340,12 +340,8 @@ async function bookAppointment(){
         Swal.fire({
             icon: 'error',
             title: 'Error',
-            text: 'There was an error saving the appointment'
+            text: 'Hubo un error al guardar su cita'
         });
     }
 
-    
-    console.log(result);
-
-    //console.log([...data]);
 }

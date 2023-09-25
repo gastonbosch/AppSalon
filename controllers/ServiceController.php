@@ -9,17 +9,13 @@ use MVC\Router;
 
         public static function index(Router $router){
 
-            if(!$_SESSION){
+            if(!isset($_SESSION)){
                 session_start();
             }
 
             isAdmin();
 
             $services = Service::all();
-
-            if($_SERVER['REQUEST_METHOD']==='POST'){
-            
-            }
 
             $router->render('services/index',[
                 'name'=>$_SESSION['name'],
@@ -29,7 +25,7 @@ use MVC\Router;
 
         public static function create(Router $router){
 
-            if(!$_SESSION){
+            if(!isset($_SESSION)){
                 session_start();
             }
 
@@ -55,7 +51,7 @@ use MVC\Router;
 
         public static function update(Router $router){
 
-            if(!$_SESSION){
+            if(!isset($_SESSION)){
                 session_start();
             }
 
@@ -73,7 +69,7 @@ use MVC\Router;
                     header('Location: /services');
                 }
             }
-
+            
             $router->render('services/update',[
                 'name'=>$_SESSION['name'],
                 'service'=>$service,
@@ -83,7 +79,7 @@ use MVC\Router;
 
         public static function delete(){
 
-            if(!$_SESSION){
+            if(!isset($_SESSION)){
                 session_start();
             }
 

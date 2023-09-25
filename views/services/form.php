@@ -1,6 +1,6 @@
 <div class="field">
     <label for="name">Nombre</label>
-    <input type="text" id="name" name="name" placeholder="Nombre del servivio" value=<?php echo $service->name; ?>>
+    <input type="text" id="name" name="name" placeholder="Nombre del servicio" value=<?php echo $service->name; ?>>
 </div>
 <div class="field">
     <label for="price">Precio</label>
