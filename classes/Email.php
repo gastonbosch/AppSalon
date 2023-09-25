@@ -1,5 +1,5 @@
 <?php
-/*
+
     namespace Classes;
 
     use Brevo\Client\Api\TransactionalEmailsApi as ApiTransactionalEmailsApi;
@@ -82,8 +82,8 @@
             }
         }
     }
-*/
 
+/*
     namespace Classes;
 
     use PHPMailer\PHPMailer\PHPMailer;
@@ -157,5 +157,5 @@
         }
 
     }
-
+*/
 ?>
