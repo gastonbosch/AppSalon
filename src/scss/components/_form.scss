@@ -13,6 +13,11 @@
     label{
         flex: 0 0 10rem;
     }
+    @include m.tablet{
+        label{
+            display: none;
+        }
+    }
     input{
         flex: 1;
         border: none;
