@@ -42,7 +42,7 @@
 }
 
 .bar{
-    margin: v.$separacion 0;
+    margin: calc(v.$separacion / 2) 0;
 
     @include m.tablet{
         display: flex;
